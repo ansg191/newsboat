@@ -20,6 +20,7 @@ jobs:
       # Nightly -- GitHub turns them into annotations, which is annoying.
       RUSTFLAGS: '-A warnings -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort -Cinstrument-coverage'
       RUSTDOCFLAGS: '-Cpanic=abort'
+      LLVM_PROFILE_FILE: 'your_name-%p-%m.profraw'
       # Some of our tests use ncurses, which require a terminal of some sort.
       # We pretend ours is a simple one.
       TERM: 'dumb'

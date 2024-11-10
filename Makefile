@@ -39,8 +39,8 @@ include config.mk
 endif
 
 ifeq ($(PROFILE),1)
-BARE_CXXFLAGS+=-O0 -fprofile-arcs -ftest-coverage
-LDFLAGS+=-fprofile-arcs -ftest-coverage
+BARE_CXXFLAGS+=-O0 --coverage
+LDFLAGS+=--coverage
 endif
 
 CXXFLAGS:=$(BARE_CXXFLAGS) $(WARNFLAGS) $(DEFINES) $(CXXFLAGS)
