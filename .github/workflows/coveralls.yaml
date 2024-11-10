@@ -18,7 +18,7 @@ jobs:
       CARGO_INCREMENTAL: 0
       # We add `-A warnings` because we aren't interested in warnings from Rust
       # Nightly -- GitHub turns them into annotations, which is annoying.
-      RUSTFLAGS: '-A warnings -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort -Cprofile-generate'
+      RUSTFLAGS: '-A warnings -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort -Cinstrument-coverage'
       RUSTDOCFLAGS: '-Cpanic=abort'
       # Some of our tests use ncurses, which require a terminal of some sort.
       # We pretend ours is a simple one.
@@ -81,3 +81,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage.lcov
+          debug: true
